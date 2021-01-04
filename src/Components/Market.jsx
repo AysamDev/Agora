@@ -1,7 +1,7 @@
 
 import { Component } from 'react';
 import Item from './Item'
-import { observer } from 'mobx-react'
+import { observer , inject} from 'mobx-react'
 class Market extends Component {
     constructor()
     {
@@ -58,7 +58,7 @@ class Market extends Component {
             <ul>
                 {this.props.inventory.items.map(
                     item => 
-                    <Item item={item} inventory={this.props.inventory}/>
+                    <Item item={item} />
                 )}
             </ul>
         }
@@ -68,4 +68,4 @@ class Market extends Component {
 
 }
 
-export default observer(Market);
+export default inject('inventory')(observer(Market));

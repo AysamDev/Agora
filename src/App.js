@@ -13,7 +13,7 @@ class App extends Component {
   {
     return (
       <div>
-            <Market inventory={this.props.inventory}/>
+            <Market />
       </div>
      
     );

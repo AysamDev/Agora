@@ -4,10 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Inventory} from '../src/store/Inventory'
-const store = new Inventory()
+import {Provider} from 'mobx-react'
+const inventory = new Inventory()
+
+const stores = {
+  inventory
+}
 ReactDOM.render(
-  
-    <App inventory={store} />,
+  <Provider {...stores}>
+    <App  /> 
+  </Provider>
+    ,
   document.getElementById('root')
 );
 
